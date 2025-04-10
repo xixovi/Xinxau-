@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<title>Algo Especial...</title>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe0ec, #f5f7fa);
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      top: 30vh;
+      padding: 20px;
+    }
+
+    .mensagem {
+      font-size: 30px; /* aumentada */
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .mensagem.aparecer {
+      opacity: 1;
+    }
+
+    .botao-container {
+      margin-top: 30px;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .botao-container.aparecer {
+      opacity: 1;
+    }
+
+    .botao {
+      background-color: #ff4f8b;
+      color: white;
+      padding: 20px 40px;
+      font-size: 22px; /* aumentada */
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 79, 139, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .botao:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 79, 139, 0.6);
+    }
+
+    .video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    video {
+      width: 90%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+  
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      transform: rotate(45deg);
+      opacity: 0.6;
+    }
+
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+      top: -10px;
+      left: 0;
+    }
+
+      left: -10px;
+      top: 0;
+    }
+
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle at 30% 30%, #ff5f96, #ff2e63);
+      transform: rotate(45deg);
+      opacity: 0.8;
+      bottom: -60px;
+      z-index: 999;
+    }
+
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: inherit;
+      border-radius: 50%;
+    }
+
+      top: -20px;
+      left: 0;
+    }
+
+      left: -20px;
+      top: 0;
+    }
+
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-130vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+
+        body, h1, p, button {
+            font-family: 'Alex Brush', cursive !important;
+        }
+    
+    body, h1, h2, h3, p, button {
+        font-family: 'Great Vibes', cursive !important;
+    }
+
+    .heart {
+        position: fixed;
+        width: 35px;
+        height: 35px;
+        background-image: url('https://i.imgur.com/yMF0r6K.png');
+        background-size: cover;
+        animation: floatHearts 8s linear infinite;
+        pointer-events: none;
+        opacity: 0.85;
+        z-index: 1;
+    }
+
+    @keyframes floatHearts {
+        0% {
+            transform: translateY(100vh) scale(0.5) rotate(0deg);
+            opacity: 0.85;
+        }
+        100% {
+            transform: translateY(-10vh) scale(1.2) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    h1 {
+        font-size: 56px !important;
+    }
+    p {
+        font-size: 34px !important;
+    }
+    button {
+        font-size: 32px !important;
+        padding: 16px 28px !important;
+    }
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet"/></head>
+<body>
+<div class="container">
+<div class="mensagem" id="msg1">Ei... Antes de continuar, respira fundo.</div>
+<div class="mensagem" id="msg2">Agora toca nesse botão só se estiver pronta pra algo especial.</div>
+<div class="botao-container" id="botaoContainer">
+<button class="botao" onclick="mostrarVideo()" style="font-size: 32px !important; padding: 16px 28px !important;">Descobrir o que o coração já sabe...</button>
+</div>
+</div>
+<div class="video-container" id="videoContainer">
+<video autoplay="" controls="">
+<source src="video.mp4" type="video/mp4"/>
+      Seu navegador não suporta o vídeo.
+    </video>
+</div>
+<script>
+    window.onload = () => {
+      setTimeout(() => document.getElementById("msg1").classList.add("aparecer"), 1000);
+      setTimeout(() => document.getElementById("msg2").classList.add("aparecer"), 4000);
+      setTimeout(() => document.getElementById("botaoContainer").classList.add("aparecer"), 7000);
+    };
+
+    function mostrarVideo() {
+      document.getElementById("videoContainer").style.display = "flex";
+    }
+  </script>
+<script>
+    for (let i = 0; i < 30; i++) {
+      let heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 10 + 's';
+      heart.style.width = heart.style.height = (Math.random() * 15 + 10) + 'px';
+      document.body.appendChild(heart);
+    }
+</script>
+<div class="heart" style="left: 75vw; animation-delay: 5s;"></div><div class="heart" style="left: 77vw; animation-delay: 6s;"></div><div class="heart" style="left: 61vw; animation-delay: 6s;"></div><div class="heart" style="left: 60vw; animation-delay: 2s;"></div><div class="heart" style="left: 12vw; animation-delay: 9s;"></div><div class="heart" style="left: 72vw; animation-delay: 10s;"></div><div class="heart" style="left: 23vw; animation-delay: 10s;"></div><div class="heart" style="left: 12vw; animation-delay: 10s;"></div><div class="heart" style="left: 47vw; animation-delay: 6s;"></div><div class="heart" style="left: 43vw; animation-delay: 7s;"></div><div class="heart" style="left: 81vw; animation-delay: 4s;"></div><div class="heart" style="left: 53vw; animation-delay: 4s;"></div></body>
+</html>
