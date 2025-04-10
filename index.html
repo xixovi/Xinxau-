@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Algo Especial...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe0ec, #f5f7fa);
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      top: 30vh;
+      padding: 20px;
+    }
+
+    .mensagem {
+      font-size: 24px;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .mensagem.aparecer {
+      opacity: 1;
+    }
+
+    .botao-container {
+      margin-top: 30px;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .botao-container.aparecer {
+      opacity: 1;
+    }
+
+    .botao {
+      background-color: #ff4f8b;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 79, 139, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .botao:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 79, 139, 0.6);
+    }
+
+    .video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    video {
+      width: 90%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="msg1" class="mensagem">Ei... Antes de continuar, respira fundo.</div>
+    <div id="msg2" class="mensagem">Agora toca nesse botão só se estiver pronta pra algo especial.</div>
+    <div id="botaoContainer" class="botao-container">
+      <button class="botao" onclick="mostrarVideo()">Descobrir o que o coração já sabe...</button>
+    </div>
+  </div>
+
+  <div id="videoContainer" class="video-container">
+    <video controls autoplay>
+      <source src="video.mp4" type="video/mp4">
+      Seu navegador não suporta o vídeo.
+    </video>
+  </div>
+
+  <script>
+    window.onload = () => {
+      setTimeout(() => document.getElementById("msg1").classList.add("aparecer"), 1000);
+      setTimeout(() => document.getElementById("msg2").classList.add("aparecer"), 4000);
+      setTimeout(() => document.getElementById("botaoContainer").classList.add("aparecer"), 7000);
+    };
+
+    function mostrarVideo() {
+      document.getElementById("videoContainer").style.display = "flex";
+    }
+  </script>
+</body>
+</html>
