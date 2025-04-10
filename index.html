@@ -1,17 +1,17 @@
 
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <title>Algo Especial...</title>
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<title>Algo Especial...</title>
+<style>
     body {
       margin: 0;
       padding: 0;
       background: linear-gradient(135deg, #ffe0ec, #f5f7fa);
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Poppins', sans-serif;
       color: #333;
       text-align: center;
       overflow: hidden;
@@ -124,65 +124,64 @@
 
     .heart {
       position: fixed;
-      width: 30px;
-      height: 30px;
-      background-color: red;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle at 30% 30%, #ff5f96, #ff2e63);
       transform: rotate(45deg);
-      animation: floatHearts 10s infinite;
-      opacity: 0.7;
-      bottom: -40px;
+      animation: floatHearts 12s infinite ease-in-out;
+      opacity: 0.8;
+      bottom: -60px;
+      z-index: 999;
     }
 
     .heart::before,
     .heart::after {
       content: "";
       position: absolute;
-      width: 30px;
-      height: 30px;
-      background-color: red;
+      width: 40px;
+      height: 40px;
+      background: inherit;
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -15px;
+      top: -20px;
       left: 0;
     }
 
     .heart::after {
-      left: -15px;
+      left: -20px;
       top: 0;
     }
 
     @keyframes floatHearts {
       0% {
         transform: translateY(0) rotate(45deg);
-        opacity: 1;
+        opacity: 0.9;
       }
       100% {
-        transform: translateY(-120vh) rotate(45deg);
+        transform: translateY(-130vh) rotate(45deg);
         opacity: 0;
       }
     }
 
 </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&amp;display=swap" rel="stylesheet"/></head>
 <body>
-  <div class="container">
-    <div id="msg1" class="mensagem">Ei... Antes de continuar, respira fundo.</div>
-    <div id="msg2" class="mensagem">Agora toca nesse botão só se estiver pronta pra algo especial.</div>
-    <div id="botaoContainer" class="botao-container">
-      <button class="botao" onclick="mostrarVideo()">Descobrir o que o coração já sabe...</button>
-    </div>
-  </div>
-
-  <div id="videoContainer" class="video-container">
-    <video controls autoplay>
-      <source src="video.mp4" type="video/mp4">
+<div class="container">
+<div class="mensagem" id="msg1">Ei... Antes de continuar, respira fundo.</div>
+<div class="mensagem" id="msg2">Agora toca nesse botão só se estiver pronta pra algo especial.</div>
+<div class="botao-container" id="botaoContainer">
+<button class="botao" onclick="mostrarVideo()">Descobrir o que o coração já sabe...</button>
+</div>
+</div>
+<div class="video-container" id="videoContainer">
+<video autoplay="" controls="">
+<source src="video.mp4" type="video/mp4"/>
       Seu navegador não suporta o vídeo.
     </video>
-  </div>
-
-  <script>
+</div>
+<script>
     window.onload = () => {
       setTimeout(() => document.getElementById("msg1").classList.add("aparecer"), 1000);
       setTimeout(() => document.getElementById("msg2").classList.add("aparecer"), 4000);
